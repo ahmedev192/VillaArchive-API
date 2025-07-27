@@ -1,4 +1,7 @@
 
+using MagicVilla_VillaAPI.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace MagicVilla_VillaAPI
 {
     public class Program
@@ -8,8 +11,12 @@ namespace MagicVilla_VillaAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-            builder.Services.AddControllers();
+            builder.Services.AddDbContext<ApplicationDbContext>(option => {
+                option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
+            });
+            builder.Services.AddControllers(option => {
+               // option.ReturnHttpNotAcceptable = true;
+            }).AddNewtonsoftJson()/*.AddXmlDataContractSerializerFormatters()*/;
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
