@@ -19,6 +19,8 @@ namespace MagicVilla_VillaAPI
             }).AddNewtonsoftJson()/*.AddXmlDataContractSerializerFormatters()*/;
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+            builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 
             var app = builder.Build();
 
