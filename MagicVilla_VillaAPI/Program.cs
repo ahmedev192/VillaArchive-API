@@ -1,5 +1,7 @@
 
 using MagicVilla_VillaAPI.Data;
+using MagicVilla_VillaAPI.Repository;
+using MagicVilla_VillaAPI.Repository.IRepostiory;
 using Microsoft.EntityFrameworkCore;
 
 namespace MagicVilla_VillaAPI
@@ -20,6 +22,9 @@ namespace MagicVilla_VillaAPI
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             //builder.Services.AddOpenApi();
             builder.Services.AddAutoMapper(typeof(MappingConfig));
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddScoped(typeof(IVillaNumberRepository), typeof(VillaNumberRepository));
+            builder.Services.AddScoped(typeof(IVillaRepository), typeof(VillaRepository));
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
