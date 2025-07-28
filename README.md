@@ -10,7 +10,6 @@ A RESTful API built with ASP.NET Core Web API for managing villa data. Ideal for
 - Swagger (OpenAPI) documentation  
 - Clean architecture using Repository pattern  
 - Global exception handling and logging  
-- Role-based authorization support (if implemented)
 
 ## 🧱 Tech Stack
 
@@ -18,7 +17,7 @@ A RESTful API built with ASP.NET Core Web API for managing villa data. Ideal for
 - Entity Framework Core  
 - AutoMapper  
 - Swagger / Swashbuckle  
-- SQL Server (or SQLite for development)
+- SQL Server 
 
 ## 🚀 Getting Started
 
